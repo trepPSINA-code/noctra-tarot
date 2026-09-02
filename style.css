@@ -48,3 +48,29 @@ main{padding:18px}
 .nav-item{border:0;background:none;color:#73767a;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 28px;cursor:pointer}.nav-item span{font-size:20px}.nav-item small{font-size:10px}.nav-item.active{color:#d43a33}
 .muted{color:#7e8084;font-size:12px}.center{text-align:center}
 @media(min-width:521px){body{padding:20px 0}.app{border:1px solid #202224;border-radius:18px;overflow:hidden}}
+
+.deck{perspective:1000px;flex-wrap:nowrap;overflow:hidden;padding:12px 2px 8px}
+.tarot-card{flex:0 0 72px;transform-origin:center bottom}
+.tarot-card:nth-child(1){transform:rotate(-8deg) translateY(7px)}
+.tarot-card:nth-child(2){transform:rotate(-5deg) translateY(2px)}
+.tarot-card:nth-child(3){transform:rotate(-2deg)}
+.tarot-card:nth-child(4){transform:translateY(-3px)}
+.tarot-card:nth-child(5){transform:rotate(2deg)}
+.tarot-card:nth-child(6){transform:rotate(5deg) translateY(2px)}
+.tarot-card:nth-child(7){transform:rotate(8deg) translateY(7px)}
+.tarot-card.selected{transform:translateY(-18px) scale(1.04) !important;z-index:2}
+.deck-hint{margin:-2px 0 8px}
+.result-spread{display:flex;justify-content:center;gap:10px;overflow-x:auto;padding:6px 0 14px}
+.result-item{min-width:104px;text-align:center}
+.position-label{font-size:10px;color:#85888b;margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px}
+.result-card-wrap{width:104px;height:176px;perspective:900px;margin:auto}
+.result-card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.7,.2,1);transform:rotateY(0deg)}
+.result-card-wrap.revealed .result-card-inner{transform:rotateY(180deg)}
+.result-card-wrap.is-reversed .result-card-front .tarot-art{transform:rotate(180deg)}
+.result-card-face{position:absolute;inset:0;border-radius:9px;backface-visibility:hidden;overflow:hidden;border:1px solid #67201d;box-shadow:0 12px 28px rgba(0,0,0,.5)}
+.result-card-back{display:grid;place-items:center;background:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 2px,transparent 2px 8px),radial-gradient(circle at center,#321316,#090b0c 65%);color:#b92d28;font-size:28px}
+.result-card-front{transform:rotateY(180deg);background:#e5d7aa}
+.tarot-art{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s}
+.result-name{font-family:"Cormorant Garamond",serif;font-size:16px;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini-badge{font-size:8px;color:#9b4a46;margin-top:2px;letter-spacing:.4px}
+@media(max-width:390px){.tarot-card{flex-basis:64px;width:64px;height:138px}.deck{gap:3px}.result-item{min-width:94px}.result-card-wrap{width:94px;height:160px}}
