@@ -6,7 +6,7 @@ const backBtn = document.getElementById('backBtn');
 const cards = window.TARO_CARDS || [];
 
 // После размещения backend замени URL ниже на адрес своего сервера.
-const const API_BASE = 'https://noctra-tarot.onrender.com';
+const API_BASE = 'https://noctra-tarot.onrender.com';
 
 const spreads = {
   one: {title:'1 КАРТА', sub:'Совет дня', count:1, positions:['Главный ответ']},
